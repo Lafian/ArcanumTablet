@@ -1,0 +1,1728 @@
+﻿/* Общие стили */
+:root {
+    --arcanum-bg: #f5f0e1;
+    --arcanum-panel: #faf6ea;
+    --arcanum-border: #8b6b4a;
+    --arcanum-highlight: #d9c8a9;
+    --arcanum-text: #3a3a3a;
+    --arcanum-active: #8b6b4a;
+    --arcanum-positive: #4a7c59;
+    --arcanum-negative: #a83232;
+    --arcanum-magic: #6a5acd;
+    --arcanum-tech: #cd853f;
+}
+
+.arcanum-character-sheet {
+    font-family: "Times New Roman", serif;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--arcanum-bg);
+    border: 8px double var(--arcanum-border);
+    padding: 20px;
+    color: var(--arcanum-text);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+    text-align: center;
+    border-bottom: 2px solid var(--arcanum-border);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+    .header h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+        color: var(--arcanum-border);
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    }
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    background: var(--arcanum-highlight);
+    border: 2px solid var(--arcanum-border);
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: inherit;
+    font-size: 16px;
+    color: var(--arcanum-text);
+    min-width: 120px;
+}
+
+    .tab-button:hover {
+        background-color: var(--arcanum-border);
+        color: var(--arcanum-panel);
+    }
+
+    .tab-button.active {
+        background: var(--arcanum-active);
+        color: var(--arcanum-panel);
+        font-weight: bold;
+    }
+
+.content-panel {
+    min-height: 500px;
+    background: var(--arcanum-panel);
+    border: 1px solid var(--arcanum-border);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.character-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.action-button {
+    background: var(--arcanum-highlight);
+    border: 2px solid var(--arcanum-border);
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    transition: all 0.3s;
+    min-width: 160px;
+}
+
+    .action-button:hover {
+        background: var(--arcanum-border);
+        color: var(--arcanum-panel);
+    }
+
+    .action-button.preview {
+        background: var(--arcanum-active);
+        color: var(--arcanum-panel);
+    }
+
+        .action-button.preview:hover {
+            background: #6d5238;
+        }
+
+/* Стили для BasicsPanel */
+.basics-panel {
+    padding: 15px;
+}
+
+.character-header, .stats-header, .skills-header, .tech-header, .magic-header {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--arcanum-border);
+    padding-bottom: 10px;
+}
+
+.basics-content {
+    display: flex;
+    gap: 30px;
+}
+
+.character-portrait {
+    flex: 0 0 250px;
+}
+
+.character-portrait-container {
+    width: 100%;
+    height: 300px;
+    border: 3px solid var(--arcanum-border);
+    background: var(--arcanum-highlight);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.portrait {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .portrait img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+.portrait-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: var(--arcanum-border);
+    font-style: italic;
+}
+
+.character-name-container {
+    margin-top: 10px;
+}
+
+    .character-name-container label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .character-name-container input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid var(--arcanum-border);
+        background: var(--arcanum-panel);
+        font-family: inherit;
+    }
+
+.character-details {
+    flex: 1;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-group select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid var(--arcanum-border);
+        background: var(--arcanum-panel);
+        font-family: inherit;
+        margin-bottom: 10px;
+    }
+
+.info-panel {
+    background: var(--arcanum-highlight);
+    border: 1px solid var(--arcanum-border);
+    padding: 10px;
+    margin-top: 5px;
+}
+
+    .info-panel h4 {
+        margin-top: 0;
+        margin-bottom: 5px;
+        border-bottom: 1px solid rgba(139, 107, 74, 0.3);
+        padding-bottom: 5px;
+    }
+
+    .info-panel p {
+        margin: 0;
+        white-space: pre-line;
+    }
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.warning {
+    color: var(--arcanum-negative);
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.aptitude-display {
+    margin-top: 30px;
+}
+
+.aptitude-container {
+    margin-bottom: 15px;
+}
+
+.aptitude-label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.aptitude-bar {
+    height: 20px;
+    background: #e0e0e0;
+    border: 1px solid var(--arcanum-border);
+    position: relative;
+}
+
+.aptitude-fill {
+    height: 100%;
+    transition: width 0.3s;
+}
+
+.magic-aptitude .aptitude-fill {
+    background: var(--arcanum-magic);
+}
+
+.tech-aptitude .aptitude-fill {
+    background: var(--arcanum-tech);
+}
+
+.aptitude-value {
+    margin-top: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Стили для StatsPanel */
+.stats-panel {
+    padding: 15px;
+}
+
+.stats-points {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.stats-container {
+    display: flex;
+    gap: 30px;
+}
+
+.stats-column {
+    flex: 1;
+}
+
+.basic-stats, .derived-stats {
+    padding: 15px;
+    background: var(--arcanum-highlight);
+    border: 1px solid var(--arcanum-border);
+    margin-bottom: 20px;
+}
+
+.stats-column h4 {
+    text-align: center;
+    margin-top: 0;
+    border-bottom: 1px solid rgba(139, 107, 74, 0.5);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.stat-row {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    margin-bottom: 8px;
+    background: var(--arcanum-panel);
+    border: 1px solid rgba(139, 107, 74, 0.3);
+}
+
+    .stat-row.derived {
+        justify-content: space-between;
+    }
+
+.stat-label {
+    flex: 0 0 40%;
+    font-weight: bold;
+}
+
+.stat-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat-button {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--arcanum-highlight);
+    border: 1px solid var(--arcanum-border);
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+    .stat-button:hover {
+        background: var(--arcanum-border);
+        color: var(--arcanum-panel);
+    }
+
+    .stat-button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        background: var(--arcanum-highlight);
+        color: var(--arcanum-text);
+    }
+
+.stat-value {
+    min-width: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+    .stat-value.positive {
+        color: var(--arcanum-positive);
+    }
+
+    .stat-value.negative {
+        color: var(--arcanum-negative);
+    }
+
+.stat-modifiers {
+    margin-left: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.modifier {
+    font-size: 12px;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+    .modifier.racial {
+        background: #d4e6f1;
+    }
+
+    .modifier.gender {
+        background: #f9e7e7;
+    }
+
+    .modifier.background {
+        background: #e8f8f5;
+    }
+
+.resistances-header {
+    text-align: center;
+    margin-top: 20px;
+    border-bottom: 1px solid rgba(139, 107, 74, 0.5);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.resistances-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.resistance-item {
+    display: flex;
+    justify-content: space-between;
+    background: var(--arcanum-panel);
+    border: 1px solid rgba(139, 107, 74, 0.3);
+    padding: 8px;
+}
+
+.resistance-label {
+    font-weight: bold;
+}
+
+.resistance-value {
+    font-weight: bold;
+}
+
+/* Стили для SkillsPanel */
+.skills-panel {
+    padding: 15px;
+}
+
+.skill-points {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.skill-categories {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.category-button {
+    padding: 8px 15px;
+    background: var(--arcanum-highlight);
+    border: 1px solid var(--arcanum-border);
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 120px;
+}
+
+    .category-button:hover {
+        background: var(--arcanum-border);
+        color: var(--arcanum-panel);
+    }
+
+    .category-button.active {
+        background: var(--arcanum-active);
+        color: var(--arcanum-panel);
+        font-weight: bold;
+    }
+
+.skills-container {
+    background: var(--arcanum-highlight);
+    border: 1px solid var(--arcanum-border);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+    .skills-container h4 {
+        text-align: center;
+        margin-top: 0;
+        border-bottom: 1px solid rgba(139, 107, 74, 0.5);
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+    }
+
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.skill-row {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: var(--arcanum-panel);
+    border: 1px solid rgba(139, 107, 74, 0.3);
+}
+
+.skill-info {
+    flex: 0 0 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-name {
+    font-weight: bold;
+}
+
+.skill-stat {
+    font-size: 12px;
+    color: #666;
+}
+
+.skill-controls {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill-button {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--arcanum-highlight);
+    border: 1px solid var(--arcanum-border);
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+    .skill-button:hover {
+        background: var(--arcanum-border);
+        color: var(--arcanum-panel);
+    }
+
+    .skill-button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        background: var(--arcanum-highlight);
+        color: var(--arcanum-text);
+    }
+
+.skill-value-container {
+    flex: 1;
+    height: 20px;
+    background: #e0e0e0;
+    border: 1px solid var(--arcanum-border);
+    position: relative;
+}
+
+.skill-value-bar {
+    height: 100%;
+    background: #6b8e23;
+    transition: width 0.3s;
+    position: relative;
+}
+
+.skill-value-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    color: #333;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.7);
+}
+
+.skill-rank {
+    flex: 0 0 80px;
+    text-align: right;
+    font-weight: bold;
+    color: #8b6b4a;
+}
+
+.skill-info-panel {
+    background: var(--arcanum-highlight);
+    border: 1px solid var(--arcanum-border);
+    padding: 15px;
+    margin-top: 20px;
+}
+
+    .skill-info-panel ul {
+        padding-left: 20px;
+    }
+
+/* Стили для TechPanel */
+.tech-panel {
+    padding: 15px;
+}
+
+.tech-aptitude {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.tech-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.tech-discipline {
+    background: var(--arcanum-highlight);
+    border: 1px solid var(--arcanum-border);
+    padding: 15px;
+}
+
+.discipline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(139, 107, 74, 0.3);
+    padding-bottom: 5px;
+}
+
+    .discipline-header h4 {
+        margin: 0;
+        color: var(--arcanum-active);
+    }
+
+.level-indicator {
+    display: flex;
+    gap: 3px;
+}
+
+.level-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    border: 1px solid var(--arcanum-border);
+}
+
+    .level-dot.active {
+        background: var(--arcanum-tech);
+    }
+
+.discipline-content {
+    background: var(--arcanum-panel);
+    padding: 10px;
+    border: 1px solid rgba(139, 107, 74, 0.3);
+}
+
+.discipline-description {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.knowledge-bar {
+    margin-bottom: 10px;
+}
+
+.knowledge-label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.knowledge-progress {
+    height: 20px;
+    background: #e0e0e0;
+    border: 1px solid var(--arcanum-border);
+    position: relative;
+}
+
+.knowledge-fill {
+    height: 100%;
+    background: var(--arcanum-tech);
+    transition: width 0.3s;
+}
+
+.knowledge-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    color: #333;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.7);
+}
+
+.discipline-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.tech-button {
+    padding: 5px 10px;
+    background: var(--arcanum-highlight);
+    border: 1px solid var(--arcanum-border);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+    .tech-button:hover {
+        background: var(--arcanum-border);
+        color: var(--arcanum-panel);
+    }
+
+    .tech-button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        background: var(--arcanum-highlight);
+        color: var(--arcanum-text);
+    }
+
+.level-value {
+    font-weight: bold;
+    min-width: 80px;
+    text-align: center;
+}
+
+.tech-info {
+    background: var(--arcanum-highlight);
+    border: 1px solid var(--arcanum-border);
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* Стили для MagicPanel */
+.magic-panel {
+    padding: 15px;
+}
+
+.magic-aptitude {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.magic-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.magic-schools {
+    flex: 0 0 250px;
+}
+
+.school-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--arcanum-highlight);
+    border: 1px solid var(--arcanum-border);
+    padding: 10px;
+}
+
+.school-item {
+    background: var(--arcanum-panel);
+    border: 1px solid rgba(139, 107, 74, 0.3);
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+    .school-item:hover {
+        background: rgba(139, 107, 74, 0.1);
+    }
+
+    .school-item.active {
+        background: var(--arcanum-active);
+        color: var(--arcanum-panel);
+    }
+
+.school-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.school-level {
+    display: flex;
+    gap: 3px;
+}
+
+.school-details {
+    flex: 1;
+    background: var(--arcanum-highlight);
+    border: 1px solid var(--arcanum-border);
+    padding: 15px;
+}
+
+.school-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(139, 107, 74, 0.3);
+    padding-bottom: 5px;
+}
+
+    .school-header h4 {
+        margin: 0;
+        color: var(--arcanum-active);
+    }
+
+.school-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.magic-button {
+    padding: 5px 10px;
+    background: var(--arcanum-panel);
+    border: 1px solid var(--arcanum-border);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+    .magic-button:hover {
+        background: var(--arcanum-border);
+        color: var(--arcanum-panel);
+    }
+
+    .magic-button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        background: var(--arcanum-panel);
+        color: var(--arcanum-text);
+    }
+
+.school-description {
+    margin-bottom: 20px;
+    background: var(--arcanum-panel);
+    padding: 10px;
+    border: 1px solid rgba(139, 107, 74, 0.3);
+}
+
+.spells-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+    .spells-list h5 {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+.spell-item {
+    background: var(--arcanum-panel);
+    border: 1px solid rgba(139, 107, 74, 0.3);
+    padding: 10px;
+    transition: all 0.3s;
+}
+
+    .spell-item:not(.locked) {
+        cursor: pointer;
+    }
+
+        .spell-item:not(.locked):hover {
+            background: rgba(139, 107, 74, 0.1);
+        }
+
+    .spell-item.locked {
+        opacity: 0.6;
+    }
+
+.spell-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.spell-name {
+    font-weight: bold;
+}
+
+.spell-level {
+    font-size: 12px;
+    color: #666;
+}
+
+.spell-requirements {
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+}
+
+.spell-description {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.spell-status {
+    text-align: right;
+    font-size: 12px;
+    font-style: italic;
+}
+
+    .spell-status .known {
+        color: var(--arcanum-positive);
+    }
+
+    .spell-status .available {
+        color: #1e90ff;
+    }
+
+    .spell-status .locked {
+        color: #888;
+    }
+
+.magic-info {
+    background: var(--arcanum-highlight);
+    border: 1px solid var(--arcanum-border);
+    padding: 15px;
+    margin-top: 20px;
+}
+
+/* Стили для начальной страницы */
+.arcanum-welcome {
+    max-width: 800px;
+    margin: 30px auto;
+    background: var(--arcanum-bg);
+    border: 8px double var(--arcanum-border);
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.arcanum-logo {
+    margin-bottom: 30px;
+}
+
+    .arcanum-logo img {
+        max-width: 100%;
+    }
+
+.welcome-content h1 {
+    color: var(--arcanum-border);
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.start-buttons {
+    margin: 30px 0;
+}
+
+.start-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: var(--arcanum-active);
+    color: var(--arcanum-panel);
+    border: 2px solid var(--arcanum-border);
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+    .start-button:hover {
+        background: #6d5238;
+        transform: scale(1.05);
+    }
+
+.game-info {
+    text-align: left;
+    margin-top: 30px;
+    background: var(--arcanum-panel);
+    padding: 20px;
+    border: 1px solid var(--arcanum-border);
+}
+
+    .game-info h2 {
+        text-align: center;
+        color: var(--arcanum-border);
+        border-bottom: 1px solid var(--arcanum-border);
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .basics-content {
+        flex-direction: column;
+    }
+
+    .character-portrait {
+        flex: 0 0 auto;
+    }
+
+    .stats-container {
+        flex-direction: column;
+    }
+
+    .magic-container {
+        flex-direction: column;
+    }
+
+    .magic-schools {
+        flex: 0 0 auto;
+    }
+
+    .school-list {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
+    .tech-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* Стили для панели инвентаря */
+.inventory-panel {
+    padding: 15px;
+}
+
+.inventory-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.inventory-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.inventory-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.inventory-tab {
+    padding: 8px 15px;
+    background: var(--arcanum-highlight);
+    border: 1px solid var(--arcanum-border);
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 100px;
+}
+
+    .inventory-tab:hover {
+        background: var(--arcanum-border);
+        color: var(--arcanum-panel);
+    }
+
+    .inventory-tab.active {
+        background: var(--arcanum-active);
+        color: var(--arcanum-panel);
+        font-weight: bold;
+    }
+
+.inventory-content {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.item-list {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+    background: var(--arcanum-highlight);
+    border: 1px solid var(--arcanum-border);
+    padding: 10px;
+}
+
+.item-card {
+    background: var(--arcanum-panel);
+    border: 1px solid rgba(139, 107, 74, 0.3);
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .item-card:hover {
+        background: rgba(139, 107, 74, 0.1);
+        transform: translateY(-2px);
+    }
+
+    .item-card.equipped {
+        background: rgba(106, 90, 205, 0.1);
+        border: 1px solid var(--arcanum-magic);
+    }
+
+.item-icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--arcanum-bg);
+    border: 1px solid var(--arcanum-border);
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+    .item-icon img {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+    }
+
+    .item-icon.magic {
+        border-color: var(--arcanum-magic);
+        background: rgba(106, 90, 205, 0.1);
+    }
+
+    .item-icon.tech {
+        border-color: var(--arcanum-tech);
+        background: rgba(205, 133, 63, 0.1);
+    }
+
+.item-details {
+    text-align: center;
+    font-size: 12px;
+}
+
+.item-name {
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-weight {
+    font-size: 10px;
+    color: #666;
+}
+
+.no-items-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    font-style: italic;
+}
+
+.item-details-panel {
+    flex: 1;
+    background: var(--arcanum-highlight);
+    border: 1px solid var(--arcanum-border);
+    padding: 15px;
+    max-width: 400px;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(139, 107, 74, 0.3);
+    padding-bottom: 5px;
+}
+
+    .item-header h4 {
+        margin: 0;
+        color: var(--arcanum-active);
+    }
+
+.item-type {
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+    .item-type.magic {
+        background: rgba(106, 90, 205, 0.2);
+        color: var(--arcanum-magic);
+    }
+
+    .item-type.tech {
+        background: rgba(205, 133, 63, 0.2);
+        color: var(--arcanum-tech);
+    }
+
+    .item-type.normal {
+        background: rgba(139, 107, 74, 0.2);
+        color: var(--arcanum-active);
+    }
+
+.item-image {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--arcanum-bg);
+    border: 1px solid var(--arcanum-border);
+    margin-bottom: 10px;
+}
+
+    .item-image img {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+    }
+
+.item-description {
+    margin-bottom: 15px;
+    font-style: italic;
+    border-left: 3px solid var(--arcanum-border);
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+.item-properties h5 {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid rgba(139, 107, 74, 0.3);
+    padding-bottom: 3px;
+}
+
+.properties-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.property {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 5px;
+    background: rgba(139, 107, 74, 0.05);
+}
+
+.property-label {
+    font-weight: bold;
+}
+
+.property-value.insufficient {
+    color: var(--arcanum-negative);
+}
+
+.item-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.item-action {
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: var(--arcanum-highlight);
+    border: 1px solid var(--arcanum-border);
+}
+
+    .item-action:hover {
+        background: var(--arcanum-border);
+        color: var(--arcanum-panel);
+    }
+
+    .item-action.equip {
+        background: var(--arcanum-active);
+        color: var(--arcanum-panel);
+    }
+
+        .item-action.equip:hover {
+            background: #6d5238;
+        }
+
+    .item-action.unequip {
+        background: var(--arcanum-magic);
+        color: var(--arcanum-panel);
+    }
+
+        .item-action.unequip:hover {
+            background: #584cad;
+        }
+
+    .item-action.drop {
+        background: #d44;
+        color: var(--arcanum-panel);
+        border-color: #a33;
+    }
+
+        .item-action.drop:hover {
+            background: #a33;
+        }
+
+.equipment-section {
+    margin-top: 30px;
+}
+
+    .equipment-section h4 {
+        text-align: center;
+        margin-bottom: 15px;
+        border-bottom: 1px solid var(--arcanum-border);
+        padding-bottom: 5px;
+    }
+
+.equipment-slots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    background: var(--arcanum-highlight);
+    border: 1px solid var(--arcanum-border);
+    padding: 15px;
+}
+
+.equipment-slot {
+    width: 100%;
+    height: 100px;
+    background: var(--arcanum-bg);
+    border: 1px solid var(--arcanum-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+    .equipment-slot:hover {
+        background: rgba(139, 107, 74, 0.1);
+    }
+
+.slot-label {
+    font-size: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.equipment-slot img {
+    max-width: 80%;
+    max-height: 60px;
+    object-fit: contain;
+}
+
+/* Responsive styles for inventory */
+@media (max-width: 768px) {
+    .inventory-content {
+        flex-direction: column;
+    }
+
+    .item-details-panel {
+        max-width: none;
+    }
+
+    .properties-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Стили для кнопки добавления предмета */
+.add-item-button {
+    background: var(--arcanum-highlight);
+    border: 2px solid var(--arcanum-border);
+    color: var(--arcanum-text);
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 10px auto 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+    .add-item-button:hover {
+        background: var(--arcanum-active);
+        color: var(--arcanum-panel);
+    }
+
+/* Стили для диалога добавления предметов */
+.add-item-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.add-item-dialog-content {
+    background: var(--arcanum-bg);
+    border: 8px double var(--arcanum-border);
+    width: 80%;
+    max-width: 800px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: var(--arcanum-highlight);
+    border-bottom: 2px solid var(--arcanum-border);
+}
+
+    .dialog-header h4 {
+        margin: 0;
+        color: var(--arcanum-text);
+        font-weight: bold;
+    }
+
+.close-dialog {
+    background: none;
+    border: none;
+    color: var(--arcanum-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.dialog-mode-selector {
+    display: flex;
+    border-bottom: 1px solid var(--arcanum-border);
+}
+
+.mode-button {
+    flex: 1;
+    padding: 10px;
+    background: var(--arcanum-highlight);
+    border: none;
+    border-right: 1px solid var(--arcanum-border);
+    color: var(--arcanum-text);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: inherit;
+}
+
+    .mode-button:last-child {
+        border-right: none;
+    }
+
+    .mode-button.active {
+        background: var(--arcanum-active);
+        color: var(--arcanum-panel);
+        font-weight: bold;
+    }
+
+    .mode-button:hover:not(.active) {
+        background: rgba(139, 107, 74, 0.3);
+    }
+
+.dialog-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 15px;
+    background: var(--arcanum-panel);
+    border-bottom: 1px solid var(--arcanum-border);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+    .filter-group label {
+        font-size: 0.9rem;
+        color: var(--arcanum-text);
+        font-weight: bold;
+    }
+
+    .filter-group select,
+    .filter-group input,
+    .form-group select,
+    .form-group input,
+    .form-group textarea {
+        background: var(--arcanum-bg);
+        color: var(--arcanum-text);
+        border: 1px solid var(--arcanum-border);
+        padding: 5px 10px;
+        font-family: inherit;
+    }
+
+.available-items-list {
+    overflow-y: auto;
+    padding: 10px;
+    flex-grow: 1;
+    max-height: 50vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+    background: var(--arcanum-panel);
+}
+
+.available-item {
+    display: flex;
+    gap: 10px;
+    padding: 8px;
+    border: 1px solid var(--arcanum-border);
+    background: var(--arcanum-bg);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+    .available-item:hover {
+        background: rgba(139, 107, 74, 0.1);
+    }
+
+    .available-item.selected {
+        background: var(--arcanum-active);
+        color: var(--arcanum-panel);
+        border-color: var(--arcanum-border);
+    }
+
+.item-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-details-small {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--arcanum-text);
+}
+
+.dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px 15px;
+    background: var(--arcanum-highlight);
+    border-top: 1px solid var(--arcanum-border);
+}
+
+.add-button {
+    background: var(--arcanum-active);
+    color: var(--arcanum-panel);
+    border: 1px solid var(--arcanum-border);
+    padding: 8px 16px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+    .add-button:disabled {
+        background: #555;
+        cursor: not-allowed;
+    }
+
+    .add-button:hover:not(:disabled) {
+        background: #6d5238;
+    }
+
+.cancel-button {
+    background: var(--arcanum-highlight);
+    color: var(--arcanum-text);
+    border: 1px solid var(--arcanum-border);
+    padding: 8px 16px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+    .cancel-button:hover {
+        background: var(--arcanum-border);
+        color: var(--arcanum-panel);
+    }
+
+/* Стили для формы создания кастомного предмета */
+.custom-item-form {
+    padding: 15px;
+    overflow-y: auto;
+    max-height: 60vh;
+    background: var(--arcanum-panel);
+}
+
+.form-section {
+    margin-bottom: 20px;
+    border: 1px solid var(--arcanum-border);
+    border-radius: 4px;
+    padding: 10px;
+    background: var(--arcanum-highlight);
+}
+
+    .form-section h5 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: var(--arcanum-text);
+        border-bottom: 1px solid var(--arcanum-border);
+        padding-bottom: 5px;
+        font-weight: bold;
+    }
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.half-width {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--arcanum-text);
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    background: var(--arcanum-bg);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Стили для модификаторов */
+.modifier-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modifier-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+    .modifier-item select {
+        flex: 2;
+    }
+
+    .modifier-item input {
+        flex: 1;
+        width: 80px;
+    }
+
+.add-modifier {
+    background: var(--arcanum-active);
+    color: var(--arcanum-panel);
+    border: 1px solid var(--arcanum-border);
+    padding: 5px 10px;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-top: 5px;
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+    .add-modifier:hover {
+        background: #6d5238;
+    }
+
+.remove-modifier {
+    background: var(--arcanum-negative);
+    color: white;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+    .remove-modifier:hover {
+        background: #8a2828;
+    }
+
+/* Адаптивные стили для диалога добавления предметов */
+@media (max-width: 768px) {
+    .add-item-dialog-content {
+        width: 95%;
+        max-height: 90vh;
+    }
+
+    .dialog-filters {
+        flex-direction: column;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .available-items-list {
+        grid-template-columns: 1fr;
+    }
+}
