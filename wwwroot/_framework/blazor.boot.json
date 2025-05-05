@@ -1,9 +1,9 @@
 {
   "mainAssemblyName": "ArcanumTablet",
   "resources": {
-    "hash": "sha256-pK/xgP6n5Dc3dqqHkVoJviR+dZCTmifejNZnIczAVEc=",
+    "hash": "sha256-YVaK5ZJgvw4acd7usW92j6OYdJSLC0m1mV+6mKDnehs=",
     "fingerprinting": {
-      "ArcanumTablet.52krawb29w.wasm": "ArcanumTablet.wasm",
+      "ArcanumTablet.nm65rnw2mr.wasm": "ArcanumTablet.wasm",
       "Microsoft.AspNetCore.Components.7pet8ifajq.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Web.jcafy9fy3t.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
       "Microsoft.AspNetCore.Components.WebAssembly.0prlth0hc4.wasm": "Microsoft.AspNetCore.Components.WebAssembly.wasm",
@@ -62,7 +62,7 @@
       "System.Runtime.InteropServices.JavaScript.2qzse51b5r.wasm": "sha256-2nWN1zwezK82JRmcnLLcKzdroP7qZRNl6DW0r2jhKe4="
     },
     "assembly": {
-      "ArcanumTablet.52krawb29w.wasm": "sha256-TZhTrmxG2fUW3izMEXHY10EH1nEKi/ZHOByVH8QX5x8=",
+      "ArcanumTablet.nm65rnw2mr.wasm": "sha256-z+eML42R5tUxXVjlrto2fGZQctbZ7cK9fCJF63UzzrA=",
       "Microsoft.AspNetCore.Components.7pet8ifajq.wasm": "sha256-q+98ysAAUzUUsf+cocB+Wo9E2s+pm7/BZ4iFvz7Xkvs=",
       "Microsoft.AspNetCore.Components.Web.jcafy9fy3t.wasm": "sha256-3YfAdOFRxy/yg6EiHZz1UHm2nRrqUQysiuULUI2wQzk=",
       "Microsoft.AspNetCore.Components.WebAssembly.0prlth0hc4.wasm": "sha256-jB/Gf1i7eXuQqAzqY/ZONe+hrW3x94pYZlL+G0Cv7Co=",
