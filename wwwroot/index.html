@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/app.css" />
     <link href="css/arcanum-style.css" rel="stylesheet" />
     <link href="ArcanumTablet.styles.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/three@0.136.0/build/three.min.js"></script>
 </head>
 
 <body>
@@ -66,7 +67,42 @@
                 input.click();
             });
         };
+
+
     </script>
+
+    <!-- Firebase App (основная библиотека) -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+
+    <!-- Firebase Realtime Database -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+
+    <!-- Инициализация Firebase -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyA1F07kX5AaP6_-sa8q2_4lzIBztYFYsHo",
+            authDomain: "arcanumtabletop.firebaseapp.com",
+            databaseURL: "https://arcanumtabletop-default-rtdb.firebaseio.com",
+            projectId: "arcanumtabletop",
+            storageBucket: "arcanumtabletop.firebasestorage.app",
+            messagingSenderId: "27292372448",
+            appId: "1:27292372448:web:29d793634ba9490e7f6f85"
+        };
+
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+            console.log("Firebase initialized");
+        }
+
+        // Инициализация Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="/js/index.js"></script>
+    <script type="module" src="/js/diceRoller.js"></script>
+    <script type="module" src="/js/simpleDiceRoller.js"></script>
+    <script type="module" src="/js/mouseEvents.js"></script>
+    <script src="/js/firebase-realtime.js"></script>
 </body>
 
 </html>
